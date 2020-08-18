@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Horror Movie API Example Plugin
+Plugin Name: Horror Movie API Example Plugin v1
 Plugin URI: https://example.com/
 Description: Example using the HTTP API to parse JSON from a remote horror movie API
 Author: WROX
@@ -13,7 +13,7 @@ add_action( 'init', 'ps_register_custom_post_type' );
 // Register the movies custom post type
 function ps_register_custom_post_type() {
  
-    register_post_type( 'movies',
+    register_post_type( 'movie',
         array(
             'labels' => array(
                 'name' => 'Movies',
@@ -76,7 +76,7 @@ function ps_movie_api_results() {
                 'post_content'  => '<a href="https://www.imdb.com/title/' . esc_attr( $movies->imdbId ) . '">',
                 'post_status'   => 'publish',
                 'post_author'   => 1,
-                'post_type'     => 'movies',
+                'post_type'     => 'movie',
             );
             
             // Insert the post into the database
