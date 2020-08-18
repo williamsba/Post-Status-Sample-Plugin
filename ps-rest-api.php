@@ -19,7 +19,7 @@ function ps_register_custom_post_type() {
                 'name' => 'Movies',
                 'singular_name' => 'Movie'
             ),
-            'supports'  => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+            'supports'  => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'custom-fields' ),
             'public' => true,
             'has_archive' => true,
             'rewrite' => array( 'slug' => 'movies' ),
@@ -82,7 +82,7 @@ function ps_movie_api_results() {
                 // Set values for our new movies post
                 $new_post = array(
                     'post_title'    => esc_html( $movies->title ),
-                    'post_content'  => '<a href="https://www.imdb.com/title/' . esc_attr( $movies->imdbId ) . '">',
+                    'post_content'  => '<a href="https://www.imdb.com/title/' . esc_attr( $movies->imdbId ) . '">' .esc_html( $movies->title ). '</a>',
                     'post_status'   => 'publish',
                     'post_author'   => 1,
                     'post_type'     => 'movie',
