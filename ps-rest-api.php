@@ -34,8 +34,10 @@ add_action( 'admin_menu', 'ps_create_menu' );
 function ps_create_menu() {
              
     // Create custom top-level menu
-    add_menu_page( 'Movies Page', 'Movies', 'manage_options', 'ps-movies', 'ps_movie_api_results', 'dashicons-smiley', 99 );
-             
+    //add_menu_page( 'Movies Page', 'Movies', 'manage_options', 'ps-movies', 'ps_movie_api_results', 'dashicons-smiley', 99 );
+
+    add_submenu_page( 'edit.php?post_type=movie', 'Movie Importer Page', 'Import Movies', 'manage_options', 'ps-movies', 'ps_movie_api_results' );
+    
 }
 
 // Request and display Movie API data
